@@ -1,0 +1,42 @@
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1a202c; /* bg-slate-800 */
+  color: white;
+  padding: 0.5rem 0;
+  z-index: 50; /* Выше чем другие элементы */
+}
+
+.ticker {
+  display: flex; /* Используем flexbox для расположения элементов в ряд */
+  width: 200%; /* Увеличиваем ширину контейнера в два раза */
+  animation: ticker 20s linear infinite; /* Увеличиваем время анимации для плавности */
+}
+
+.ticker-item {
+  width: 50%; /* Каждый элемент занимает половину ширины родителя */
+  text-align: center; /* Центрируем текст для лучшего вида */
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap; /* Предотвращаем перенос строки */
+}
+
+.price-up {
+  color: #4ade80; /* green-400 */
+}
+
+.price-down {
+  color: #f87171; /* red-400 */
+}
